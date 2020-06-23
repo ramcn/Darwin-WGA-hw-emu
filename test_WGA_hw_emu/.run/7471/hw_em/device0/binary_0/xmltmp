@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="WGA.hw_emu">
+  <platform vendor="xilinx" boardid="aws-vu9p-f1-04261818" name="dynamic" featureRomTime="0">
+    <version major="5" minor="0"/>
+    <description/>
+    <board name="amazon:minotaur-vu9p-f1:1.0" vendor="amazon" fpga="">
+      <interfaces>
+        <interface id="int1" name="PCIe" type="gen3x16"/>
+      </interfaces>
+      <memories>
+        <memory name="mem0" type="ddr4" size="16GB"/>
+        <memory name="mem1" type="ddr4" size="16GB"/>
+        <memory name="mem2" type="ddr4" size="16GB"/>
+        <memory name="mem3" type="ddr4" size="16GB"/>
+      </memories>
+      <images>
+        <image name="" type="HDPI"/>
+        <image name="" type="MDPI"/>
+        <image name="" type="LDPI"/>
+      </images>
+      <id>
+        <vendor/>
+        <device/>
+        <subsystem/>
+      </id>
+    </board>
+    <build_flow/>
+    <host architecture="x86_64"/>
+    <device name="fpga0" fpgaDevice="virtexuplus:xcvu9p:flgb2104:-2:i" addrWidth="0">
+      <systemClocks>
+        <clock port="clk_main_a0" frequency="250MHz"/>
+      </systemClocks>
+      <core name="OCL_REGION_0" target="hw_em" type="clc_region" clockFreq="0MHz" numComputeUnits="60">
+        <kernelClocks>
+          <clock port="DATA_CLK" frequency="300.000000MHz"/>
+          <clock port="KERNEL_CLK" frequency="500.000000MHz"/>
+        </kernelClocks>
+        <kernel name="GACTX_bank3" language="ip_c" vlnv="cva_stanford:ip:GACTX_bank3:1.0" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="true" interrupt="true">
+          <port name="s_axi_control" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x0"/>
+          <port name="m00_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="m01_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <arg name="sub_AA" addressQualifier="0" id="0" port="s_axi_control" size="0x4" offset="0x010" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AC" addressQualifier="0" id="1" port="s_axi_control" size="0x4" offset="0x018" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AG" addressQualifier="0" id="2" port="s_axi_control" size="0x4" offset="0x020" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AT" addressQualifier="0" id="3" port="s_axi_control" size="0x4" offset="0x028" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CC" addressQualifier="0" id="4" port="s_axi_control" size="0x4" offset="0x030" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CG" addressQualifier="0" id="5" port="s_axi_control" size="0x4" offset="0x038" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CT" addressQualifier="0" id="6" port="s_axi_control" size="0x4" offset="0x040" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_GG" addressQualifier="0" id="7" port="s_axi_control" size="0x4" offset="0x048" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_GT" addressQualifier="0" id="8" port="s_axi_control" size="0x4" offset="0x050" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_TT" addressQualifier="0" id="9" port="s_axi_control" size="0x4" offset="0x058" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_N" addressQualifier="0" id="10" port="s_axi_control" size="0x4" offset="0x060" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="gap_open" addressQualifier="0" id="11" port="s_axi_control" size="0x4" offset="0x068" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="gap_extend" addressQualifier="0" id="12" port="s_axi_control" size="0x4" offset="0x070" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="y_drop" addressQualifier="0" id="13" port="s_axi_control" size="0x4" offset="0x078" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="align_fields" addressQualifier="0" id="14" port="s_axi_control" size="0x4" offset="0x080" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="ref_len" addressQualifier="0" id="15" port="s_axi_control" size="0x4" offset="0x088" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="query_len" addressQualifier="0" id="16" port="s_axi_control" size="0x4" offset="0x090" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="ref_offset" addressQualifier="0" id="17" port="s_axi_control" size="0x8" offset="0x098" hostOffset="0x0" hostSize="0x8" type="ulong"/>
+          <arg name="query_offset" addressQualifier="0" id="18" port="s_axi_control" size="0x8" offset="0x0a0" hostOffset="0x0" hostSize="0x8" type="ulong"/>
+          <arg name="ref_seq" addressQualifier="1" id="19" port="m00_axi" size="0x8" offset="0x0a8" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="query_seq" addressQualifier="1" id="20" port="m00_axi" size="0x8" offset="0x0b0" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="tile_output" addressQualifier="1" id="21" port="m01_axi" size="0x8" offset="0x0b8" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="tb_output" addressQualifier="1" id="22" port="m01_axi" size="0x8" offset="0x0c0" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <maxWorkGroupSize x="0" y="0" z="0"/>
+          <string_table/>
+          <instance name="GACTX_bank3_1">
+            <addrRemap base="0x0000000000040000" port="s_axi_control"/>
+          </instance>
+        </kernel>
+        <kernel name="BSW_bank3" language="ip_c" vlnv="cva_stanford:ip:BSW_bank3:1.0" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="true" interrupt="true">
+          <port name="s_axi_control" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x0"/>
+          <port name="m00_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="m01_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="m02_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="m03_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <arg name="sub_AA" addressQualifier="0" id="0" port="s_axi_control" size="0x4" offset="0x010" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AC" addressQualifier="0" id="1" port="s_axi_control" size="0x4" offset="0x018" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AG" addressQualifier="0" id="2" port="s_axi_control" size="0x4" offset="0x020" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AT" addressQualifier="0" id="3" port="s_axi_control" size="0x4" offset="0x028" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CC" addressQualifier="0" id="4" port="s_axi_control" size="0x4" offset="0x030" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CG" addressQualifier="0" id="5" port="s_axi_control" size="0x4" offset="0x038" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CT" addressQualifier="0" id="6" port="s_axi_control" size="0x4" offset="0x040" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_GG" addressQualifier="0" id="7" port="s_axi_control" size="0x4" offset="0x048" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_GT" addressQualifier="0" id="8" port="s_axi_control" size="0x4" offset="0x050" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_TT" addressQualifier="0" id="9" port="s_axi_control" size="0x4" offset="0x058" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_N" addressQualifier="0" id="10" port="s_axi_control" size="0x4" offset="0x060" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="gap_open" addressQualifier="0" id="11" port="s_axi_control" size="0x4" offset="0x068" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="gap_extend" addressQualifier="0" id="12" port="s_axi_control" size="0x4" offset="0x070" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="band_size" addressQualifier="0" id="13" port="s_axi_control" size="0x4" offset="0x078" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="batch_size" addressQualifier="0" id="14" port="s_axi_control" size="0x4" offset="0x080" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="batch_align_fields" addressQualifier="0" id="15" port="s_axi_control" size="0x4" offset="0x088" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="ref_seq" addressQualifier="1" id="16" port="m00_axi" size="0x8" offset="0x090" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="query_seq" addressQualifier="1" id="17" port="m00_axi" size="0x8" offset="0x098" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="batch_id" addressQualifier="1" id="18" port="m01_axi" size="0x8" offset="0x0a0" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="batch_params" addressQualifier="1" id="19" port="m02_axi" size="0x8" offset="0x0a8" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="batch_tile_output" addressQualifier="1" id="20" port="m03_axi" size="0x8" offset="0x0b0" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <maxWorkGroupSize x="0" y="0" z="0"/>
+          <string_table/>
+          <instance name="BSW_bank3_1">
+            <addrRemap base="0x0000000000030000" port="s_axi_control"/>
+          </instance>
+        </kernel>
+        <kernel name="BSW_bank2" language="ip_c" vlnv="cva_stanford:ip:BSW_bank2:1.0" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="true" interrupt="true">
+          <port name="s_axi_control" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x0"/>
+          <port name="m00_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="m01_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="m02_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="m03_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <arg name="sub_AA" addressQualifier="0" id="0" port="s_axi_control" size="0x4" offset="0x010" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AC" addressQualifier="0" id="1" port="s_axi_control" size="0x4" offset="0x018" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AG" addressQualifier="0" id="2" port="s_axi_control" size="0x4" offset="0x020" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AT" addressQualifier="0" id="3" port="s_axi_control" size="0x4" offset="0x028" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CC" addressQualifier="0" id="4" port="s_axi_control" size="0x4" offset="0x030" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CG" addressQualifier="0" id="5" port="s_axi_control" size="0x4" offset="0x038" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CT" addressQualifier="0" id="6" port="s_axi_control" size="0x4" offset="0x040" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_GG" addressQualifier="0" id="7" port="s_axi_control" size="0x4" offset="0x048" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_GT" addressQualifier="0" id="8" port="s_axi_control" size="0x4" offset="0x050" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_TT" addressQualifier="0" id="9" port="s_axi_control" size="0x4" offset="0x058" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_N" addressQualifier="0" id="10" port="s_axi_control" size="0x4" offset="0x060" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="gap_open" addressQualifier="0" id="11" port="s_axi_control" size="0x4" offset="0x068" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="gap_extend" addressQualifier="0" id="12" port="s_axi_control" size="0x4" offset="0x070" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="band_size" addressQualifier="0" id="13" port="s_axi_control" size="0x4" offset="0x078" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="batch_size" addressQualifier="0" id="14" port="s_axi_control" size="0x4" offset="0x080" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="batch_align_fields" addressQualifier="0" id="15" port="s_axi_control" size="0x4" offset="0x088" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="ref_seq" addressQualifier="1" id="16" port="m00_axi" size="0x8" offset="0x090" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="query_seq" addressQualifier="1" id="17" port="m00_axi" size="0x8" offset="0x098" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="batch_id" addressQualifier="1" id="18" port="m01_axi" size="0x8" offset="0x0a0" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="batch_params" addressQualifier="1" id="19" port="m02_axi" size="0x8" offset="0x0a8" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="batch_tile_output" addressQualifier="1" id="20" port="m03_axi" size="0x8" offset="0x0b0" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <maxWorkGroupSize x="0" y="0" z="0"/>
+          <string_table/>
+          <instance name="BSW_bank2_1">
+            <addrRemap base="0x0000000000020000" port="s_axi_control"/>
+          </instance>
+        </kernel>
+        <kernel name="BSW_bank0" language="ip_c" vlnv="cva_stanford:ip:BSW_bank0:1.0" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="true" interrupt="true">
+          <port name="s_axi_control" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x0"/>
+          <port name="m00_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="m01_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="m02_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="m03_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <arg name="sub_AA" addressQualifier="0" id="0" port="s_axi_control" size="0x4" offset="0x010" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AC" addressQualifier="0" id="1" port="s_axi_control" size="0x4" offset="0x018" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AG" addressQualifier="0" id="2" port="s_axi_control" size="0x4" offset="0x020" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AT" addressQualifier="0" id="3" port="s_axi_control" size="0x4" offset="0x028" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CC" addressQualifier="0" id="4" port="s_axi_control" size="0x4" offset="0x030" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CG" addressQualifier="0" id="5" port="s_axi_control" size="0x4" offset="0x038" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CT" addressQualifier="0" id="6" port="s_axi_control" size="0x4" offset="0x040" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_GG" addressQualifier="0" id="7" port="s_axi_control" size="0x4" offset="0x048" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_GT" addressQualifier="0" id="8" port="s_axi_control" size="0x4" offset="0x050" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_TT" addressQualifier="0" id="9" port="s_axi_control" size="0x4" offset="0x058" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_N" addressQualifier="0" id="10" port="s_axi_control" size="0x4" offset="0x060" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="gap_open" addressQualifier="0" id="11" port="s_axi_control" size="0x4" offset="0x068" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="gap_extend" addressQualifier="0" id="12" port="s_axi_control" size="0x4" offset="0x070" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="band_size" addressQualifier="0" id="13" port="s_axi_control" size="0x4" offset="0x078" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="batch_size" addressQualifier="0" id="14" port="s_axi_control" size="0x4" offset="0x080" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="batch_align_fields" addressQualifier="0" id="15" port="s_axi_control" size="0x4" offset="0x088" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="ref_seq" addressQualifier="1" id="16" port="m00_axi" size="0x8" offset="0x090" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="query_seq" addressQualifier="1" id="17" port="m00_axi" size="0x8" offset="0x098" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="batch_id" addressQualifier="1" id="18" port="m01_axi" size="0x8" offset="0x0a0" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="batch_params" addressQualifier="1" id="19" port="m02_axi" size="0x8" offset="0x0a8" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="batch_tile_output" addressQualifier="1" id="20" port="m03_axi" size="0x8" offset="0x0b0" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <maxWorkGroupSize x="0" y="0" z="0"/>
+          <string_table/>
+          <instance name="BSW_bank0_1">
+            <addrRemap base="0x0000000000000000" port="s_axi_control"/>
+          </instance>
+        </kernel>
+        <kernel name="BSW_bank1" language="ip_c" vlnv="cva_stanford:ip:BSW_bank1:1.0" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="true" interrupt="true">
+          <port name="s_axi_control" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x0"/>
+          <port name="m00_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="m01_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="m02_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="m03_axi" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <arg name="sub_AA" addressQualifier="0" id="0" port="s_axi_control" size="0x4" offset="0x010" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AC" addressQualifier="0" id="1" port="s_axi_control" size="0x4" offset="0x018" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AG" addressQualifier="0" id="2" port="s_axi_control" size="0x4" offset="0x020" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_AT" addressQualifier="0" id="3" port="s_axi_control" size="0x4" offset="0x028" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CC" addressQualifier="0" id="4" port="s_axi_control" size="0x4" offset="0x030" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CG" addressQualifier="0" id="5" port="s_axi_control" size="0x4" offset="0x038" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_CT" addressQualifier="0" id="6" port="s_axi_control" size="0x4" offset="0x040" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_GG" addressQualifier="0" id="7" port="s_axi_control" size="0x4" offset="0x048" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_GT" addressQualifier="0" id="8" port="s_axi_control" size="0x4" offset="0x050" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_TT" addressQualifier="0" id="9" port="s_axi_control" size="0x4" offset="0x058" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="sub_N" addressQualifier="0" id="10" port="s_axi_control" size="0x4" offset="0x060" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="gap_open" addressQualifier="0" id="11" port="s_axi_control" size="0x4" offset="0x068" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="gap_extend" addressQualifier="0" id="12" port="s_axi_control" size="0x4" offset="0x070" hostOffset="0x0" hostSize="0x4" type="int"/>
+          <arg name="band_size" addressQualifier="0" id="13" port="s_axi_control" size="0x4" offset="0x078" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="batch_size" addressQualifier="0" id="14" port="s_axi_control" size="0x4" offset="0x080" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="batch_align_fields" addressQualifier="0" id="15" port="s_axi_control" size="0x4" offset="0x088" hostOffset="0x0" hostSize="0x4" type="uint"/>
+          <arg name="ref_seq" addressQualifier="1" id="16" port="m00_axi" size="0x8" offset="0x090" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="query_seq" addressQualifier="1" id="17" port="m00_axi" size="0x8" offset="0x098" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="batch_id" addressQualifier="1" id="18" port="m01_axi" size="0x8" offset="0x0a0" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="batch_params" addressQualifier="1" id="19" port="m02_axi" size="0x8" offset="0x0a8" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="batch_tile_output" addressQualifier="1" id="20" port="m03_axi" size="0x8" offset="0x0b0" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <maxWorkGroupSize x="0" y="0" z="0"/>
+          <string_table/>
+          <instance name="BSW_bank1_1">
+            <addrRemap base="0x0000000000010000" port="s_axi_control"/>
+          </instance>
+        </kernel>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="interconnect_axilite_user_M01_AXI" dstType="kernel" dstInst="BSW_bank0_1" dstPort="s_axi_control"/>
+        <connection srcType="kernel" srcInst="BSW_bank0_1" srcPort="m00_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem0_S01_AXI"/>
+        <connection srcType="kernel" srcInst="BSW_bank0_1" srcPort="m01_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem0_S01_AXI"/>
+        <connection srcType="kernel" srcInst="BSW_bank0_1" srcPort="m02_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem0_S01_AXI"/>
+        <connection srcType="kernel" srcInst="BSW_bank0_1" srcPort="m03_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem0_S01_AXI"/>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="interconnect_axilite_user_M01_AXI" dstType="kernel" dstInst="BSW_bank1_1" dstPort="s_axi_control"/>
+        <connection srcType="kernel" srcInst="BSW_bank1_1" srcPort="m00_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem1_S01_AXI"/>
+        <connection srcType="kernel" srcInst="BSW_bank1_1" srcPort="m01_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem1_S01_AXI"/>
+        <connection srcType="kernel" srcInst="BSW_bank1_1" srcPort="m02_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem1_S01_AXI"/>
+        <connection srcType="kernel" srcInst="BSW_bank1_1" srcPort="m03_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem1_S01_AXI"/>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="interconnect_axilite_user_M01_AXI" dstType="kernel" dstInst="BSW_bank3_1" dstPort="s_axi_control"/>
+        <connection srcType="kernel" srcInst="BSW_bank3_1" srcPort="m00_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem3_S01_AXI"/>
+        <connection srcType="kernel" srcInst="BSW_bank3_1" srcPort="m01_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem3_S01_AXI"/>
+        <connection srcType="kernel" srcInst="BSW_bank3_1" srcPort="m02_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem3_S01_AXI"/>
+        <connection srcType="kernel" srcInst="BSW_bank3_1" srcPort="m03_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem3_S01_AXI"/>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="interconnect_axilite_user_M01_AXI" dstType="kernel" dstInst="BSW_bank2_1" dstPort="s_axi_control"/>
+        <connection srcType="kernel" srcInst="BSW_bank2_1" srcPort="m00_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem2_S01_AXI"/>
+        <connection srcType="kernel" srcInst="BSW_bank2_1" srcPort="m01_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem2_S01_AXI"/>
+        <connection srcType="kernel" srcInst="BSW_bank2_1" srcPort="m02_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem2_S01_AXI"/>
+        <connection srcType="kernel" srcInst="BSW_bank2_1" srcPort="m03_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem2_S01_AXI"/>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="interconnect_axilite_user_M01_AXI" dstType="kernel" dstInst="GACTX_bank3_1" dstPort="s_axi_control"/>
+        <connection srcType="kernel" srcInst="GACTX_bank3_1" srcPort="m00_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem3_S01_AXI"/>
+        <connection srcType="kernel" srcInst="GACTX_bank3_1" srcPort="m01_axi" dstType="core" dstInst="OCL_REGION_0" dstPort="interconnect_aximm_ddrmem3_S01_AXI"/>
+      </core>
+    </device>
+  </platform>
+</project>
+ 

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2017.4.op (64-bit)
+# SW Build 2193837 on Tue Apr 10 18:06:59 MDT 2018
+# IP Build 2189296 on Tue Apr 10 19:39:46 MDT 2018
+# Start of session at: Sat Dec 28 21:08:53 2019
+# Process ID: 27050
+# Current directory: /home/chakenal/Darwin-WGA-hw-emu/_xocc_link_BSW_bank0_WGA.hw_emu.dir/_vpl/ipi/syn/syn.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /home/chakenal/Darwin-WGA-hw-emu/_xocc_link_BSW_bank0_WGA.hw_emu.dir/_vpl/ipi/syn/syn.sim/sim_1/behav/xsim/xsim.dir/emu_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/chakenal/Darwin-WGA-hw-emu/_xocc_link_BSW_bank0_WGA.hw_emu.dir/_vpl/ipi/syn/syn.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /home/chakenal/Darwin-WGA-hw-emu/_xocc_link_BSW_bank0_WGA.hw_emu.dir/_vpl/ipi/syn/syn.sim/sim_1/behav/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/chakenal/Darwin-WGA-hw-emu/_xocc_link_BSW_bank0_WGA.hw_emu.dir/_vpl/ipi/syn/syn.sim/sim_1/behav/xsim/xsim.dir/emu_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/chakenal/Darwin-WGA-hw-emu/_xocc_link_BSW_bank0_WGA.hw_emu.dir/_vpl/ipi/syn/syn.sim/sim_1/behav/xsim/xsim.dir/emu_wrapper_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Dec 28 21:08:57 2019. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2017.4.op/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sat Dec 28 21:08:57 2019...
